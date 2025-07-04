@@ -74,6 +74,6 @@ A secure, production-ready RESTful web application built with Java Spring Boot. 
 
 ## Notes
 - All endpoints except `/` and `/api/auth/**` require authentication.
-- Use Postman or curl for testing API endpoints.
+- Use Postman for testing API endpoints.
 
 
