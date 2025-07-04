@@ -26,9 +26,7 @@ public class TaskController {
             @RequestParam(required = false) String createdAt,
             @RequestParam(required = false) String sortBy,
             Authentication authentication) {
-        // Parse params as needed
         TaskStatus statusEnum = status != null ? TaskStatus.valueOf(status) : null;
-        // TODO: parse dueDate/createdAt if needed
         var tasks = taskService.getUserTasks(authentication.getName(), statusEnum, null, null, sortBy);
         return ResponseEntity.ok(tasks);
     }
