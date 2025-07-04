@@ -1,6 +1,6 @@
 # User and Task Management System
 
-A secure, production-ready RESTful web application built with Java Spring Boot. This system allows registered users to manage their personal tasks, with support for user registration, JWT-based login, and role-based access control (USER and ADMIN roles).
+A secure, production-ready RESTful web application built with Java Spring Boot. This system allows registered users to manage their personal tasks, with support for user registration, JWT-based login and role-based access control (USER and ADMIN roles).
 
 ## Features
 
@@ -14,46 +14,37 @@ A secure, production-ready RESTful web application built with Java Spring Boot. 
 
 ### Prerequisites
 - Java 17+
-- Maven or Gradle
-- (Optional) Postman or curl for API testing
+- Maven 
+- Postman for API testing
 
 ### Running the Application
 
 1. Clone the repository:
-   ```sh
-   git clone <your-repo-url>
+   git clone <https://github.com/Innocent204/User-and-Task-Management.git>
    cd User-and-Task-Management-System
-   ```
 2. Build and run:
-   ```sh
    ./mvnw spring-boot:run
-   # or
-   mvn spring-boot:run
-   ```
    The app will start at `http://localhost:8080/`
-
 ## API Usage
 
 ### 1. Register a User
 - **POST** `/api/auth/register`
 - **Body:**
-  ```json
+  json
   {
-    "username": "user1",
-    "password": "password123",
+    "username": "Trigger",
+    "password": "Musakeys123",
     "roles": ["USER"]
   }
-  ```
 
 ### 2. Login
 - **POST** `/api/auth/login`
 - **Body:**
-  ```json
+  json
   {
-    "username": "user1",
-    "password": "password123"
+    "username": "Trigger",
+    "password": "Musakeys123"
   }
-  ```
 - **Returns:** JWT token
 
 ### 3. Task Endpoints (Authenticated)
@@ -78,12 +69,11 @@ A secure, production-ready RESTful web application built with Java Spring Boot. 
 - Java 17+
 - Spring Boot
 - Spring Security (JWT)
-- JPA/Hibernate
-- H2/MySQL/PostgreSQL (configurable)
+- Hibernate
+- MySQL
 
 ## Notes
 - All endpoints except `/` and `/api/auth/**` require authentication.
 - Use Postman or curl for testing API endpoints.
 
-## License
-MIT
+
