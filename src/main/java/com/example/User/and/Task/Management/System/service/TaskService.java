@@ -30,7 +30,7 @@ public class TaskService {
     }
 
     public List<Task> getUserTasks(String username, TaskStatus status, LocalDateTime dueDate, LocalDateTime createdAt, String sortBy) {
-        // Filtering and sorting logic (simplified)
+        // Filtering and sorting 
         User user = userRepository.findByUsername(username).orElseThrow();
         if (status != null) {
             return taskRepository.findByUserAndStatus(user, status, Sort.by(Sort.Direction.ASC, sortBy != null ? sortBy : "createdAt"));
