@@ -1,4 +1,4 @@
-package dto.response;
+package com.example.User.and.Task.Management.System.dto.response;
 
 import com.example.User.and.Task.Management.System.model.TaskStatus;
 import java.time.LocalDateTime;
@@ -39,4 +39,3 @@ public class TaskResponse {
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }
-

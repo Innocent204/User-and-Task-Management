@@ -1,4 +1,4 @@
-package dto.response;
+package com.example.User.and.Task.Management.System.dto.response;
 
 public class AuthResponse {
     private String token;
@@ -19,4 +19,3 @@ public class AuthResponse {
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
 }
-

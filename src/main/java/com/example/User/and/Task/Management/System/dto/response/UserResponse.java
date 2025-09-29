@@ -1,4 +1,4 @@
-package dto.response;
+package com.example.User.and.Task.Management.System.dto.response;
 
 import java.util.Set;
 
@@ -23,4 +23,3 @@ public class UserResponse {
     public Set<String> getRoles() { return roles; }
     public void setRoles(Set<String> roles) { this.roles = roles; }
 }
-

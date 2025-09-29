@@ -1,8 +1,9 @@
-package dto.request;
+package com.example.User.and.Task.Management.System.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 
 public class LoginRequest {
+    @NotBlank
     private String username;
 
     @NotBlank

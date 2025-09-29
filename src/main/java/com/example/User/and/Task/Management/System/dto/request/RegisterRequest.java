@@ -1,9 +1,8 @@
-package dto.request;
+package com.example.User.and.Task.Management.System.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.util.Set;
-import com.example.User.and.Task.Management.System.model.Role;
 
 public class RegisterRequest {
     @NotBlank
@@ -14,7 +13,7 @@ public class RegisterRequest {
     @Size(min = 6, max = 100)
     private String password;
 
-    private Set<Role> roles;
+    private Set<String> roles;
 
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
@@ -22,7 +21,6 @@ public class RegisterRequest {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
-    public Set<Role> getRoles() { return roles; }
-    public void setRoles(Set<Role> roles) { this.roles = roles; }
+    public Set<String> getRoles() { return roles; }
+    public void setRoles(Set<String> roles) { this.roles = roles; }
 }
-

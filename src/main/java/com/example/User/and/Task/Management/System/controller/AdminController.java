@@ -3,6 +3,9 @@ package com.example.User.and.Task.Management.System.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.example.User.and.Task.Management.System.service.TaskService;
+import com.example.User.and.Task.Management.System.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/admin")

@@ -3,23 +3,30 @@ package com.example.User.and.Task.Management.System.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import com.example.User.and.Task.Management.System.service.TaskService;
+import com.example.User.and.Task.Management.System.model.Task;
+import com.example.User.and.Task.Management.System.model.TaskStatus;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
     private final TaskService taskService;
+    
     @Autowired
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<?> createTask(@RequestBody Task task, Authentication authentication) {
         Task created = taskService.createTask(task, authentication.getName());
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity<?> getUserTasks(
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String dueDate,
@@ -33,7 +40,7 @@ public class TaskController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getTaskById(@PathVariable Long id, Authentication authentication) {
-        var taskOpt = taskService.getTaskById(id);
+        Optional<Task> taskOpt = taskService.getTaskById(id);
         if (taskOpt.isEmpty()) return ResponseEntity.notFound().build();
         Task task = taskOpt.get();
         boolean isAdmin = authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));

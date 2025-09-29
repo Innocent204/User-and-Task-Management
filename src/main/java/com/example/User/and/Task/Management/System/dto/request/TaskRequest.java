@@ -1,4 +1,4 @@
-package dto.request;
+package com.example.User.and.Task.Management.System.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,7 +17,6 @@ public class TaskRequest {
     @NotNull
     private TaskStatus status;
 
-    @NotNull
     private LocalDateTime dueDate;
 
     public String getTitle() { return title; }
@@ -32,4 +31,3 @@ public class TaskRequest {
     public LocalDateTime getDueDate() { return dueDate; }
     public void setDueDate(LocalDateTime dueDate) { this.dueDate = dueDate; }
 }
-

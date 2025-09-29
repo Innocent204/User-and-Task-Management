@@ -3,7 +3,10 @@ package com.example.User.and.Task.Management.System.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import dto.request.RegisterRequest;
+import com.example.User.and.Task.Management.System.dto.request.RegisterRequest;
+import com.example.User.and.Task.Management.System.dto.request.LoginRequest;
+import com.example.User.and.Task.Management.System.dto.response.AuthResponse;
+import com.example.User.and.Task.Management.System.service.AuthService;
 import org.springframework.http.HttpStatus;
 
 @RestController
@@ -11,6 +14,7 @@ import org.springframework.http.HttpStatus;
 public class AuthController {
     private final AuthService authService;
 
+    @Autowired
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
